@@ -1,6 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using SistemaDeTarefas.Data;
+using SistemaDeTarefas.Repository;
+using SistemaDeTarefas.Repository.Interfaces;
+using System.Diagnostics;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//builder.Services.AddEntityFrameworkSqlServer().AddDbContext<SystemContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("AllConnection")));
+
+//teste de conexao
+//Debug.WriteLine(builder.Configuration.GetConnectionString("AllConnection");
+builder.Services.AddDbContext<SystemContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("AllConnection")));
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

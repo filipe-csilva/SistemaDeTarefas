@@ -15,7 +15,7 @@ namespace SistemaDeTarefas.Repository
             _dbContext = systemContext;
         }
 
-        public async Task<UserMd> SearchUserById(int id)
+        public async Task<UserMd?> SearchUserById(int id)
         {
             return await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
         }
@@ -49,7 +49,7 @@ namespace SistemaDeTarefas.Repository
             return userById;
         }
 
-        public async Task<bool> Drop(int id)
+        public async Task<bool> DropUser(int id)
         {
             UserMd userById = await SearchUserById(id);
 
