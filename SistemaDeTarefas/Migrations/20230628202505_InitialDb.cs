@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace SistemaDeTarefas.Migrations
+namespace ApiDeTarefas.Migrations
 {
     /// <inheritdoc />
     public partial class InitialDb : Migration

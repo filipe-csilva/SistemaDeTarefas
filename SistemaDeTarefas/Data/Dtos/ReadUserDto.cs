@@ -1,4 +1,4 @@
-﻿namespace SistemaDeTarefas.Data.Dtos
+﻿namespace ApiDeTarefas.Data.Dtos
 {
     public class ReadUserDto
     {

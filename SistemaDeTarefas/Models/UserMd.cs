@@ -1,4 +1,4 @@
-﻿namespace SistemaDeTarefas.Models
+﻿namespace ApiDeTarefas.Models
 {
     public class UserMd
     {

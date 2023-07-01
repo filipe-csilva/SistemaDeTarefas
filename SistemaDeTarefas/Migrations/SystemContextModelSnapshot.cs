@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SistemaDeTarefas.Data;
+using ApiDeTarefas.Data;
 
 #nullable disable
 
-namespace SistemaDeTarefas.Migrations
+namespace ApiDeTarefas.Migrations
 {
     [DbContext(typeof(SystemContext))]
     partial class SystemContextModelSnapshot : ModelSnapshot
@@ -42,9 +42,14 @@ namespace SistemaDeTarefas.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Tasks");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Tasks", (string)null);
                 });
 
             modelBuilder.Entity("SistemaDeTarefas.Models.UserMd", b =>
@@ -67,7 +72,18 @@ namespace SistemaDeTarefas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("SistemaDeTarefas.Models.TaskMd", b =>
+                {
+                    b.HasOne("SistemaDeTarefas.Models.UserMd", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SistemaDeTarefas.Models;
+using ApiDeTarefas.Models;
 
-namespace SistemaDeTarefas.Data.Map
+namespace ApiDeTarefas.Data.Map
 {
     public class UserMap : IEntityTypeConfiguration<UserMd>
     {

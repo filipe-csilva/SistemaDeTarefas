@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace SistemaDeTarefas.Enus
+namespace ApiDeTarefas.Enus
 {
     public enum StatusTask
     {

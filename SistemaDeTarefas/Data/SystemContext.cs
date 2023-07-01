@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SistemaDeTarefas.Data.Map;
-using SistemaDeTarefas.Models;
+using ApiDeTarefas.Data.Map;
+using ApiDeTarefas.Models;
 
-namespace SistemaDeTarefas.Data
+namespace ApiDeTarefas.Data
 {
     public class SystemContext : DbContext
     {

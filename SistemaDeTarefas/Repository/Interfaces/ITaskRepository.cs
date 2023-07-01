@@ -2,7 +2,7 @@
 
 namespace ApiDeTarefas.Repository.Interfaces
 {
-    public interface IUserRepository : IRepository<UserMd>
+    public interface ITaskRepository : IRepository<TaskMd>
     {
     }
 }

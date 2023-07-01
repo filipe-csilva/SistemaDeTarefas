@@ -1,4 +1,4 @@
-﻿namespace SistemaDeTarefas.Data.Dto
+﻿namespace ApiDeTarefas.Data.Dto
 {
     public class CreateUserDto
     {

@@ -11,8 +11,8 @@ using ApiDeTarefas.Data;
 namespace ApiDeTarefas.Migrations
 {
     [DbContext(typeof(SystemContext))]
-    [Migration("20230628202505_InitialDb")]
-    partial class InitialDb
+    [Migration("20230629185715_vinculo task com user")]
+    partial class vinculotaskcomuser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,12 @@ namespace ApiDeTarefas.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Tasks");
                 });
@@ -71,6 +76,17 @@ namespace ApiDeTarefas.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("SistemaDeTarefas.Models.TaskMd", b =>
+                {
+                    b.HasOne("SistemaDeTarefas.Models.UserMd", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
