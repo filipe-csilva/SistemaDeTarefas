@@ -1,6 +1,6 @@
-# Nome do meu projeto
+# API Sistema de Tarefas
 
-Rápida descrição do objetivo de fazer esse projeto
+API para gerenciamento de tarefas por usuario
 
 | :placard: Vitrine.Dev |     |
 | -------------  | --- |
