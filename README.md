@@ -14,28 +14,73 @@ API para gerenciamento de tarefas por usuario
 
 ## Descrição do projeto
 
-Este projeto é uma API (Application Programming Interface) de tarefas para cada usuario, desenvolvido em ASP.NET. 
+Este é um projeto de exemplo que demonstra um aplicativo web usando ASP.NET Core para realizar operações CRUD (Create, Read, Update, Delete) para tarefas e usuários. O aplicativo utiliza um banco de dados para armazenar os dados e fornece uma API para interação com o front-end.
+
+## Tecnologias Utilizadas
+
+- ASP.NET Core 7.0
+- Entity Framework Core (EF Core)
+- SQL Server (ou outro banco de dados de sua escolha)
+- C#
 
 
-O objetivo é coletar e limpar os dados dos fundos imobiliários de forma automatizada, permitindo que os usuários possam facilmente analisar e tomar decisões com base nos dados. A ferramenta realiza a extração de informações dos fundos imobiliários, como rendimento, valor atual, data e outros detalhes, e os armazena em um formato estruturado para facilitar a análise. Além disso, a limpeza dos dados é realizada para garantir a qualidade e a precisão dos dados. Este projeto é útil para investidores, analistas de mercado e outros interessados em fundos imobiliários.
+## Pré-requisitos
 
-Instalação
-Faça o download do código-fonte do projeto a partir do repositório no GitHub
-Certifique-se de ter o .netFremwork  3.x instalado em sua máquina
-Instale as dependências necessárias utilizando o gerenciador de pacotes pip, rodando o seguinte comando:
-pip install -r requirements.txt
-Como utilizar?
-Abrir o arquivo de configuração do projeto em: src/config/__init__.py
-Editar a class ConfigurationDatabase com todas as credenciais necessarias e editar a estrutura de connection string se necessario
+- .NET Core SDK (versão 7.0 ou superior)
+- SQL Server (ou outro banco de dados compatível)
+- Um ambiente de desenvolvimento integrado (IDE) como Visual Studio ou Visual Studio Code
 
-Sites com as connection strings necessarias https://www.connectionstrings.com/
 
-Executar o arquivo run.py com o seguinte comando:
-python run.py
-Quando consultar o banco de dados ele estara com a table FUNDOS_IMO preenchida!
+## Configuração do Banco de Dados
 
-Contatos
-Github:
+1. Instale o SQL Server e crie um banco de dados para o projeto.
+
+2. Abra o arquivo `appsettings.json` na pasta raiz do projeto.
+
+3. No arquivo `appsettings.json`, substitua a string de conexão do banco de dados pelos dados do seu banco recém-criado.
+
+
+## Configuração do Projeto
+
+1. Clone este repositório para sua máquina local.
+
+2. Abra o projeto no seu IDE de escolha.
+3. Aplique as migrações para criar as tabelas do banco de dados. No terminal, execute o seguinte comando:
+
+    ```
+    dotnet ef database update
+    ```
+
+4. Inicie o aplicativo. No terminal, execute o seguinte comando:
+
+    ```
+    dotnet run
+    ```
+
+6. Acesse a API através do navegador ou de uma ferramenta como o Postman. As rotas para interagir com as tarefas e usuários serão fornecidas pela API.
+
+
+## Rotas da API
+
+A API possui as seguintes rotas:
+
+- GET `/api/task`: Retorna todas as tarefas.
+- GET `/api/task/{id}`: Retorna uma tarefa específica pelo ID.
+- POST `/api/task`: Cria uma nova tarefa.
+- PUT `/api/task/{id}`: Atualiza uma tarefa existente pelo ID.
+- DELETE `/api/task/{id}`: Exclui uma tarefa pelo ID.
+
+- GET `/api/user`: Retorna todos os usuários.
+- GET `/api/user/{id}`: Retorna um usuário específico pelo ID.
+- POST `/api/user`: Cria um novo usuário.
+- PUT `/api/user/{id}`: Atualiza um usuário existente pelo ID.
+- DELETE `/api/user/{id}`: Exclui um usuário pelo ID.
+
+## Contribuição
+
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões, sinta-se à vontade para abrir uma issue neste repositório.
+
+## Licença
 
 :octocat: @pedrowill-dev
 :octocat: @devlooppear
