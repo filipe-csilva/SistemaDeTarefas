@@ -82,10 +82,12 @@ Contribuições são bem-vindas! Se você encontrar algum problema ou tiver suge
 
 ## Licença
 
-:octocat: @pedrowill-dev
-:octocat: @devlooppear
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+:octocat: [@filipe-csilva](https://github.com/filipe-csilva)
+:octocat: @
 
 Linkedin:
 
-@Iago Silva
+
 @Pedro Willian
