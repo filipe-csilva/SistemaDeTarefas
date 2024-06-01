@@ -67,7 +67,7 @@ namespace ApiDeTarefas.Controllers
         {
             UserMd usuario = new UserMd()
             {
-                Id = user.Id,
+                Id = id,
                 Name = user.Name,
                 Email = user.Email
             };
